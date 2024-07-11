@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .super-title {
+    @apply text-[4rem] sm:text-[4.4rem] md:text-[4.8rem] lg:text-[5.2rem] xl:text-[5.6rem] leading-tight;
+  }
+  .mega-title {
+    @apply text-[5rem] sm:text-[5.4rem] md:text-[5.8rem] lg:text-[6.2rem] xl:text-[6.6rem] leading-tight;
+  }
+  .main-title {
+    @apply text-[3rem] sm:text-[3.4rem] md:text-[3.8rem] lg:text-[4.2rem] xl:text-[4.6rem];
+  }
+  .secondary-title {
+    @apply text-[2.5rem] sm:text-[2.9rem] md:text-[3.3rem] lg:text-[3.7rem] xl:text-[4.1rem];
+  }
+  .tertiary-title {
+    @apply text-[2rem] sm:text-[2.3rem] md:text-[2.6rem] lg:text-[2.9rem] xl:text-[3.2rem];
+  }
+  .quaternary-title {
+    @apply text-[1.75rem] sm:text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] xl:text-[2.75rem];
+  }
+  .large-text {
+    @apply text-[1.5rem] sm:text-[1.7rem] md:text-[1.9rem] lg:text-[2.1rem] xl:text-[2.3rem];
+  }
+  .medium-text {
+    @apply text-[1.25rem] sm:text-[1.4rem] md:text-[1.55rem] lg:text-[1.7rem] xl:text-[1.85rem];
+  }
+  .base-text {
+    @apply text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.4rem];
+  }
+  .small-text {
+    @apply text-[0.875rem] sm:text-[0.95rem] md:text-[1.025rem] lg:text-[1.1rem] xl:text-[1.175rem];
+  }
+  .extra-small-text {
+    @apply text-[0.75rem] sm:text-[0.825rem] md:text-[0.9rem] lg:text-[0.975rem] xl:text-[1.05rem];
+  }
+  .tiny-text {
+    @apply text-[0.625rem] sm:text-[0.675rem] md:text-[0.725rem] lg:text-[0.775rem] xl:text-[0.825rem];
+  }
+  .extra-tiny-text {
+    @apply text-[0.5rem] sm:text-[0.55rem] md:text-[0.6rem] lg:text-[0.65rem] xl:text-[0.7rem];
+  }
+
+  .navbar-links {
+    @apply text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] lg:text-[1.3rem] xl:text-[1.4rem];
+  }
+}
+
+/* FONTS */
+
+/* Roboto */
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Inter */
+.inter-thin {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-light {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-medium {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-black {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-thin-italic {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: italic;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-light-italic {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-regular-italic {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-medium-italic {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: italic;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-bold-italic {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: italic;
+  font-variation-settings: "slnt" 0;
+}
+
+.inter-black-italic {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: italic;
+  font-variation-settings: "slnt" 0;
+}
+
+/* General */
+
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
