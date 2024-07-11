@@ -82,7 +82,7 @@ function NavBar() {
         <div className='justify-between hidden md:flex px-4'>
           <div className='flex py-1'>
             <span className='text-[1.4rem] md:text-[1rem] roboto-regular leading-tight text-black-texts pr-5'>(+57) 318 323 9426</span>
-            <span className='text-[1.4rem] md:text-[1rem] roboto-regular leading-tight text-black-text'>serviciosascprisma@gmail.com</span>
+            <span className='text-[1.4rem] md:text-[1rem] roboto-regular leading-tight text-black-text'>webmasterprisma1@gmail.com</span>
           </div>
           <div className='flex justify-between'>
             {
@@ -143,7 +143,7 @@ function NavBar() {
         </div>
         <div className='flex flex-col justify-center items-center'>
           <span className='small-text roboto-regular md:leading-[2.5rem] text-black-texts md:pr-5'>(+57) 318 323 9426</span>
-          <span className='small-text roboto-regular md:leading-[2.4rem] text-black-text'>serviciosascprisma@gmail.com</span>
+          <span className='small-text roboto-regular md:leading-[2.4rem] text-black-text'>webmasterprisma1@gmail.com</span>
         </div>
       </div>
     </div>

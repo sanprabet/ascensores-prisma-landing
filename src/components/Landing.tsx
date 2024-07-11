@@ -1,4 +1,3 @@
-import React from 'react'
 import MainLayout from './MainLayout'
 
 import HeroImage from '../assets/HeroImage.png';
