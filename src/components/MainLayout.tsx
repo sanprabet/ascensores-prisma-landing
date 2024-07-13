@@ -46,7 +46,7 @@ const socialMedia = [
   }
 ]
 
-const normalLinks = "text-[1.4rem] md:text-[1rem] lg:text-[1.2rem] leading-tight roboto-regular text-center mb-[0.5rem] border-b-4 border-transparent hover:border-red-primary py-2 mb-4 mt-2 md:my-0"
+const normalLinks = "text-[1.4rem] md:text-[1rem] xl:text-[1.2rem] leading-tight roboto-regular text-center mb-[0.5rem] border-b-4 border-transparent hover:border-red-primary py-2 mb-4 mt-2 md:my-0"
 
 const categories = [
   {
@@ -67,7 +67,7 @@ const categories = [
   {
     name: 'Cotiza Ya',
     link: '/aliados',
-    className: 'bg-blue-primary text-[1.4rem] md:text-[1rem] lg:text-[1.2rem] leading-tight roboto-regular text-center text-white-background rounded-full min-w-max px-8 py-2 mb-4 mt-2 md:my-0 md:mb-[0.5rem]'
+    className: 'bg-blue-primary text-[1.4rem] md:text-[1rem] xl:text-[1.2rem] leading-tight roboto-regular text-center text-white-background rounded-full min-w-max px-8 py-2 mb-4 mt-2 md:my-0 md:mb-[0.5rem]'
   }
 ]
 
@@ -78,11 +78,11 @@ function NavBar() {
 
   return (
     <div className='bg-white'>
-      <div className='w-full border-b-2'>
+      <div className='w-full border-b-2 px-4'>
         <div className='justify-between hidden md:flex px-4'>
           <div className='flex py-1'>
-            <span className='text-[1.4rem] md:text-[1rem] roboto-regular leading-tight text-black-texts pr-5'>(+57) 318 323 9426</span>
-            <span className='text-[1.4rem] md:text-[1rem] roboto-regular leading-tight text-black-text'>webmasterprisma1@gmail.com</span>
+            <span className='text-[1.4rem] md:text-[1rem] roboto-light leading-tight text-black-texts pr-5'>(+57) 318 323 9426</span>
+            <span className='text-[1.4rem] md:text-[1rem] roboto-light leading-tight text-black-text'>webmasterprisma1@gmail.com</span>
           </div>
           <div className='flex justify-between'>
             {

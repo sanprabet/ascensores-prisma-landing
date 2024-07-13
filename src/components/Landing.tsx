@@ -13,17 +13,17 @@ function HeroSection() {
     <section className="relative pt-10 pb-8 lg:pb">
       <div className="mx-auto lg:max-w-[1575px] w-full px-5 sm:px-10 md:px-12 lg:px-5 flex flex-col lg:flex-row gap-10 lg:gap-12">
         <div className="relative flex flex-col items-center text-center lg:text-left lg:py-7 xl:py-8 lg:items-start lg:max-w-none max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2">
-          <h1 className="text-3xl leading-tight sm:text-4xl md:text-5xl xl:text-6xl font-bold text-gray-900">
-          <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-blue-600 via-30% to-green-600">Valorizamos</span> tu Inmueble con la Mejor <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-600 from-20% via-blue-600 via-30% to-green-600">Tecnología.</span>
+          <h1 className="text-3xl leading-tight sm:text-4xl md:text-5xl xl:text-6xl roboto-black text-gray-900">
+          <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-primary from-20% via-purple-600 via-30% to-red-primary">Valorizamos</span> tu Inmueble con la Mejor <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-primary from-20% to-blue-primary">Tecnología.</span>
           </h1>
-          <p className="mt-4 lg:mt-8 text-gray-700">
+          <p className="mt-4 lg:mt-8 text-[1rem] md:text-[1.2rem] lg:text-[1.3rem]  text-gray-700">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores repellat perspiciatis aspernatur quis voluptatum porro incidunt,
             libero sequi quos eos velit.
           </p>
           <div className="mt-4 lg:mt-10 w-full flex max-w-md mx-auto lg:mx-0">
             <div className="flex justify-center lg:justify-start gap-5 w-full">
               <button className="flex text-white justify-center items-center w-full sm:w-max px-6 h-12 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
-                      after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-[#172554] hover:after:opacity-100 hover:after:scale-[2.5] bg-blue-600 border-transparent hover:border-[#172554]">
+                      after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-blue-secondary hover:after:opacity-100 hover:after:scale-[2.5] hover:text-black-text bg-blue-primary">
                 <span className="relative z-10">
                   Get Started
                 </span>
@@ -58,7 +58,7 @@ function Values() {
     },
     {
       title: 'Pensamos en tu seguridad ',
-      description: <span>Nos especializamos en la <b>importacion de equipos</b> con piezas bajo la norma NTC 5926-1, siendo distribuidores de los <b>mejores equipos en el mercado.</b></span>,
+      description: <span>Nos especializamos en la <b>importacion de equipos</b> con piezas bajo la norma NTC 5926-1, con los mejores equipos en el mercado.</span>,
       icon: CargoTruckIcon
     },
   ]
@@ -70,7 +70,7 @@ function Values() {
           <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {
               content.map((item) => (
-                <div key={uuidv4()} className="flex flex-col items-center gap-3 bg-white rounded-3xl shadow-main px-4 py-6 mb-4 mx-4">
+                <div key={uuidv4()} className="flex flex-col items-center gap-3 bg-blue-secondary rounded-3xl shadow-main px-4 py-6 mb-4 mx-4">
                   <img src={item.icon} alt={item.title} className='w-[5rem]' />
                   <p className="text-2xl font-extrabold text-dark-grey-900 text-center">{item.title}</p>
                   <p className="text-base leading-7 text-dark-grey-600 text-center">
@@ -108,11 +108,9 @@ function Projects() {
   return (
     <section className="text-gray-400 bg-blue-primary body-font">
       <div className="container px-5 py-12 mx-auto">
-        <div className="flex flex-col">
-          <h1 className="w-full text-center font-bold tertiary-title leading-tight text-white mb-6">
-            NUESTROS PROYECTOS
-          </h1>
-        </div>
+        <h1 className="leading-tight text-[1.3rem] sm:text-[1.8rem] md:text-[2.4rem] xl:text-[2.8rem] text-center roboto-black text-white mb-12">
+          Algunos de Nuestros Proyectos
+        </h1>
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           {
             projects.map((project, index) => (
@@ -219,6 +217,9 @@ function CompanyLogos() {
 
   return (
     <div className="flex flex-col mx-3 mb-12 rounded-lg">
+        <h1 className="text-[1.3rem] leading-tight sm:text-[1.8rem] md:text-[2.4rem] xl:text-[2.8rem] text-center roboto-black text-black-text mb-4">
+          Nuestros Aliados
+        </h1>
       <div className="w-full draggable">
         <div className="container flex flex-col items-center gap-8 mx-auto">
           <Slider {...settings} className="w-full">
@@ -239,6 +240,8 @@ function CompanyLogos() {
     </div>
   );
 }
+
+
 
 function Landing() {
 
