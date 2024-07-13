@@ -64,13 +64,13 @@ function Values() {
   ]
 
   return (
-    <div className="lg:max-w-[1575px] w-full container flex flex-col mx-auto">
+    <div className="lg:max-w-[1650px] w-full flex flex-col mx-auto">
       <div className="w-full draggable">
         <div className="container flex flex-col items-center gap-16 mx-auto my-8">
-          <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {
               content.map((item) => (
-                <div key={uuidv4()} className="flex flex-col items-center gap-3 bg-blue-secondary rounded-3xl shadow-main px-4 py-6 mb-4 mx-4">
+                <div key={uuidv4()} className="flex flex-col items-center gap-1 bg-blue-secondary rounded-3xl shadow-main px-4 py-6 mb-4 mx-2">
                   <img src={item.icon} alt={item.title} className='w-[5rem]' />
                   <p className="text-2xl font-extrabold text-dark-grey-900 text-center">{item.title}</p>
                   <p className="text-base leading-7 text-dark-grey-600 text-center">
@@ -87,69 +87,71 @@ function Values() {
   )
 }
 
+import CategoryImage from '../assets/images/instalation-guy.png';
+import CategoryImage2 from '../assets/images/console-box.png';
+import CategoryImage3 from '../assets/images/elevator-inside.png';
+import CategoryImage4 from '../assets/images/elevator-roof.png';
+import CategoryImage5 from '../assets/images/desk-girl.png';
+import CategoryImage6 from '../assets/images/elevator-motor.png';
 
-function Projects() {
 
-  const projects = [
-    {
-      image: "https://dummyimage.com/1205x505",
-      title: "The 400 Blows",
-      description: "Swag shoindegoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.",
-      link: "#"
-    },
-    {
-      image: "https://dummyimage.com/1205x505",
-      title: "Another Project",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.",
-      link: "#"
-    }
-  ]
+const images = [
+  {
+    src: CategoryImage3,
+    alt: 'Persona instalando ascensor',
+    title: 'Instalación',
+  },
+  {
+    src: CategoryImage2,
+    alt: '',
+    title: 'Mantenimiento',
+  },
+  {
+    src: CategoryImage,
+    alt: 'Description for image 3',
+    title: 'Reparacion',
+  },
+  {
+    src: CategoryImage4,
+    alt: 'Description for image 3',
+    title: 'Modernizacion',
+  },
+  {
+    src: CategoryImage6,
+    alt: 'Description for image 3',
+    title: 'Repuestos',
+  },
+  {
+    src: CategoryImage5,
+    alt: 'Description for image 3',
+    title: 'Asesoria',
+  },
+];
 
+const Categories = () => {
   return (
-    <section className="text-gray-400 bg-blue-primary body-font">
-      <div className="container px-5 py-12 mx-auto">
-        <h1 className="leading-tight text-[1.3rem] sm:text-[1.8rem] md:text-[2.4rem] xl:text-[2.8rem] text-center roboto-black text-white mb-12">
-          Algunos de Nuestros Proyectos
-        </h1>
-        <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-          {
-            projects.map((project, index) => (
-              <div key={index} className="p-4 md:w-1/3 sm:mb-0 mb-6">
-                <div className="rounded-lg h-64 overflow-hidden">
-                  <img
-                    alt="content"
-                    className="object-cover object-center h-full w-full"
-                    src={project.image}
-                  />
-                </div>
-                <h2 className="text-xl font-medium title-font text-white mt-5">
-                  {project.title}
-                </h2>
-                <p className="text-base leading-relaxed mt-2">
-                  {project.description}
-                </p>
-                <a href={project.link} className="text-indigo-400 inline-flex items-center mt-3">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
+    <div className="bg-blue-primary mx-auto p-4 py-20 flex flex-col items-center justify-center">
+      <div className='lg:max-w-[1750px] mx-auto'>
+        <div className="mx-auto max-w-xl text-center mb-3">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Categorias</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Que podemos hacer por ti?</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-4">
+          {images.map((image, index) => (
+            <div key={index} className="w-full sm:w-1/2 lg:w-1/3 max-w-sm relative shadow-md rounded-lg cursor-pointer">
+              <div className="aspect-w-16 aspect-h-9">
+                <img src={image.src} alt={image.alt} className="w-full h-full object-cover rounded-lg" />
               </div>
-            ))
-          }
+              <div className="absolute bottom-0 left-0 right-0 bg-blue-secondary text-black-text backdrop-blur p-4 py-4 rounded-b-lg">
+                <h1 className="text-2xl font-semibold">{image.title}</h1>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
 
 import LogoCompany1 from '../assets/companies/areandina.png'
 import LogoCompany2 from '../assets/companies/formacion-tecnica-y-humana.png'
@@ -216,7 +218,7 @@ function CompanyLogos() {
   };
 
   return (
-    <div className="flex flex-col mx-3 mb-12 rounded-lg">
+    <div className="flex flex-col mx-3 my x-12 rounded-lg">
         <h1 className="text-[1.3rem] leading-tight sm:text-[1.8rem] md:text-[2.4rem] xl:text-[2.8rem] text-center roboto-black text-black-text mb-4">
           Nuestros Aliados
         </h1>
@@ -243,6 +245,146 @@ function CompanyLogos() {
 
 
 
+const testimonials = [
+  {
+    name: "Albert Einstein",
+    commentary: "“Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.”",
+    image: LogoCompany1
+  },
+  {
+    name: "Juventus's old lady",
+    commentary: "“Juventus is against racism and this club has to celebrate with different religions and other people.”",
+    image: LogoCompany1
+  },
+  {
+    name: "Legend Pele",
+    commentary: "“Everything on earth is a game. A passing thing. We all end up dead. We all end up the same, don't we?”",
+    image: LogoCompany1
+  },
+  {
+    name: "William Shakespeare",
+    commentary: "“If there is a book that you want to read but it's not yet out, then you must be the one to write it.”",
+    image: LogoCompany1
+  },
+  {
+    name: "Usain Bolt",
+    commentary: "“Lots of legends, lots of people have come before me, but this is my time.”",
+    image: LogoCompany1
+  }
+];
+
+const CustomerOpinions = () => {
+  return (
+    <div className="relative isolate bg-white-background pb-32 pt-24 sm:pt-32">
+      <div
+        className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
+        aria-hidden="true"
+      >
+        <div
+          className="ml-[max(50%,38rem)] aspect-[1313/771] w-[82.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc]"
+          style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }}
+        ></div>
+      </div>
+      <div
+        className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
+        aria-hidden="true"
+      >
+        <div
+          className="ml-[-22rem] aspect-[1313/771] w-[82.0625rem] flex-none origin-top-right rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] xl:ml-0 xl:mr-[calc(50%-12rem)]"
+          style={{ clipPath: 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)' }}
+        ></div>
+      </div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">History</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">We changed history (legends)</p>
+        </div>
+        <div className="mx-auto mt-16 grid max-w-full grid-cols-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-1 xl:mx-0 xl:max-w-none xl:grid-cols-1">
+          {testimonials.map((testimonial) => (
+            <figure key={uuidv4()} className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+              <blockquote className="text-gray-900">
+                <p>{testimonial.commentary}</p>
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-x-4">
+                <img className="h-10 w-10 rounded-full bg-gray-50" src={testimonial.image} alt={testimonial.name} />
+                <div>
+                  <div className="font-semibold">{testimonial.name}</div>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+function Projects() {
+
+  const projects = [
+    {
+      image: "https://dummyimage.com/1205x505",
+      title: "The 400 Blows",
+      description: "Swag shoindegoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.",
+      link: "#"
+    },
+    {
+      image: "https://dummyimage.com/1205x505",
+      title: "Another Project",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.",
+      link: "#"
+    }
+  ]
+
+  return (
+    <section className="text-gray-400 bg-blue-primary body-font">
+      <div className="container px-5 py-12 mx-auto">
+        <h1 className="leading-tight text-[1.3rem] sm:text-[1.8rem] md:text-[2.4rem] xl:text-[2.8rem] text-center roboto-black text-white mb-12">
+          Algunos de Nuestros Proyectos
+        </h1>
+        <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          {
+            projects.map((project, index) => (
+              <div key={index} className="p-4 md:w-1/3 sm:mb-0 mb-6">
+                <div className="rounded-lg h-64 overflow-hidden">
+                  <img
+                    alt="content"
+                    className="object-cover object-center h-full w-full"
+                    src={project.image}
+                  />
+                </div>
+                <h2 className="text-xl font-medium title-font text-white mt-5">
+                  {project.title}
+                </h2>
+                <p className="text-base leading-relaxed mt-2">
+                  {project.description}
+                </p>
+                <a href={project.link} className="text-indigo-400 inline-flex items-center mt-3">
+                  Learn More
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    className="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
 function Landing() {
 
 
@@ -250,7 +392,9 @@ function Landing() {
     <MainLayout>
       <HeroSection />
       <Values />
+      <Categories />
       <CompanyLogos />
+      <CustomerOpinions />
       <Projects />
     </MainLayout>
   )
