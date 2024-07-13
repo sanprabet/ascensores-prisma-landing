@@ -132,8 +132,8 @@ const Categories = () => {
   return (
     <div className="bg-blue-primary mx-auto p-4 py-20 flex flex-col items-center justify-center">
       <div className='lg:max-w-[1750px] mx-auto'>
-        <div className="mx-auto max-w-xl text-center mb-3">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Categorias</h2>
+        <div className="mx-auto max-w-xl text-center mb-12">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Productos y Servicios</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Que podemos hacer por ti?</p>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
@@ -218,10 +218,11 @@ function CompanyLogos() {
   };
 
   return (
-    <div className="flex flex-col mx-3 my x-12 rounded-lg">
-        <h1 className="text-[1.3rem] leading-tight sm:text-[1.8rem] md:text-[2.4rem] xl:text-[2.8rem] text-center roboto-black text-black-text mb-4">
-          Nuestros Aliados
-        </h1>
+    <div className="flex flex-col mx-3 my x-12 rounded-lg py-12">
+        <div className="mx-auto max-w-xl text-center mb-12">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-700">Nuestros Clientes</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-black-text sm:text-4xl">El Mejor Servicio para todo Tipo de Negocio</p>
+        </div>
       <div className="w-full draggable">
         <div className="container flex flex-col items-center gap-8 mx-auto">
           <Slider {...settings} className="w-full">
@@ -275,7 +276,7 @@ const testimonials = [
 
 const CustomerOpinions = () => {
   return (
-    <div className="relative isolate bg-white-background pb-32 pt-24 sm:pt-32">
+    <div className="relative isolate bg-white-background pb-12">
       <div
         className="absolute inset-x-0 top-1/2 -z-10 -translate-y-1/2 transform-gpu overflow-hidden opacity-30 blur-3xl"
         aria-hidden="true"
@@ -286,7 +287,7 @@ const CustomerOpinions = () => {
         ></div>
       </div>
       <div
-        className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-32 opacity-25 blur-3xl sm:pt-40 xl:justify-end"
+        className="absolute inset-x-0 top-0 -z-10 flex transform-gpu overflow-hidden pt-4 opacity-25 blur-3xl xl:justify-end"
         aria-hidden="true"
       >
         <div
@@ -295,14 +296,10 @@ const CustomerOpinions = () => {
         ></div>
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-indigo-600">History</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">We changed history (legends)</p>
-        </div>
         <div className="mx-auto mt-16 grid max-w-full grid-cols-1 gap-8 text-sm leading-6 text-gray-900 sm:mt-20 sm:grid-cols-1 xl:mx-0 xl:max-w-none xl:grid-cols-1">
           {testimonials.map((testimonial) => (
             <figure key={uuidv4()} className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
-              <blockquote className="text-gray-900">
+              <blockquote className="text-gray-900 md:text-[1.25rem]">
                 <p>{testimonial.commentary}</p>
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-x-4">
@@ -340,9 +337,10 @@ function Projects() {
   return (
     <section className="text-gray-400 bg-blue-primary body-font">
       <div className="container px-5 py-12 mx-auto">
-        <h1 className="leading-tight text-[1.3rem] sm:text-[1.8rem] md:text-[2.4rem] xl:text-[2.8rem] text-center roboto-black text-white mb-12">
-          Algunos de Nuestros Proyectos
-        </h1>
+        <div className="mx-auto max-w-xl text-center mb-12">
+          <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Nuestros Proyectos</h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Que podemos hacer por ti?</p>
+        </div>
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           {
             projects.map((project, index) => (
