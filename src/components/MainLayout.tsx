@@ -98,7 +98,7 @@ function NavBar() {
             }
           </div>
         </div>
-        <div className='flex justify-between px-2'>
+        <div className='max-w-[1575px] mx-auto flex justify-between px-2'>
           <a href="/" className='min-w-max'>
             <img src={CompanyLogo} alt='Ascensor Prisma' className="w-[12rem] md:w-[15rem]" />
           </a>

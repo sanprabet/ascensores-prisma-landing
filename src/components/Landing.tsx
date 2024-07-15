@@ -17,8 +17,7 @@ function HeroSection() {
           <span className="text-transparent bg-clip-text bg-gradient-to-br from-blue-primary from-20% via-purple-600 via-30% to-red-primary">Valorizamos</span> tu Inmueble con la Mejor <span className="text-transparent bg-clip-text bg-gradient-to-br from-red-primary from-20% to-blue-primary">Tecnología.</span>
           </h1>
           <p className="mt-4 lg:mt-8 text-[1rem] md:text-[1.2rem] lg:text-[1.3rem]  text-gray-700">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores repellat perspiciatis aspernatur quis voluptatum porro incidunt,
-            libero sequi quos eos velit.
+            Soluciones integrales en ascensores con atención rápida y materiales de calidad. Transformamos espacios con tecnología de vanguardia y diseños contemporáneos.
           </p>
           <div className="mt-4 lg:mt-10 w-full flex max-w-md mx-auto lg:mx-0">
             <div className="flex justify-center lg:justify-start gap-5 w-full">
@@ -134,13 +133,16 @@ const Categories = () => {
       <div className='lg:max-w-[1750px] mx-auto'>
         <div className="mx-auto max-w-xl text-center mb-12">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Productos y Servicios</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Que podemos hacer por ti?</p>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Encuentra el Servicio Perfecto para tus Necesidades</p>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           {images.map((image, index) => (
-            <div key={index} className="w-full sm:w-1/2 lg:w-1/3 max-w-sm relative shadow-md rounded-lg cursor-pointer">
-              <div className="aspect-w-16 aspect-h-9">
+            <div key={index} className="group w-full sm:w-1/2 lg:w-1/3 max-w-sm relative shadow-md rounded-lg cursor-pointer overflow-hidden">
+              <div className="aspect-w-16 aspect-h-9 transition-transform duration-300 group-hover:scale-105">
                 <img src={image.src} alt={image.alt} className="w-full h-full object-cover rounded-lg" />
+              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 group-hover:bg-opacity-70 flex items-center justify-center">
+                <span className="text-white text-lg font-bold opacity-0 group-hover:opacity-100">{"Ir a " + image.title}</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 bg-blue-secondary text-black-text backdrop-blur p-4 py-4 rounded-b-lg">
                 <h1 className="text-2xl font-semibold">{image.title}</h1>
@@ -152,6 +154,8 @@ const Categories = () => {
     </div>
   );
 };
+
+
 
 import LogoCompany1 from '../assets/companies/areandina.png'
 import LogoCompany2 from '../assets/companies/formacion-tecnica-y-humana.png'
@@ -221,7 +225,7 @@ function CompanyLogos() {
     <div className="flex flex-col mx-3 my x-12 rounded-lg py-12">
         <div className="mx-auto max-w-xl text-center mb-12">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-700">Nuestros Clientes</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-black-text sm:text-4xl">El Mejor Servicio para todo Tipo de Negocio</p>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-black-text sm:text-4xl">Ascensores de Confianza para Tu Hogar y Negocio</p>
         </div>
       <div className="w-full draggable">
         <div className="container flex flex-col items-center gap-8 mx-auto">
@@ -339,7 +343,7 @@ function Projects() {
       <div className="container px-5 py-12 mx-auto">
         <div className="mx-auto max-w-xl text-center mb-12">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Nuestros Proyectos</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">¿Que podemos hacer por ti?</p>
+          <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Casos de Éxito en Modernización de Ascensores</p>
         </div>
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           {
