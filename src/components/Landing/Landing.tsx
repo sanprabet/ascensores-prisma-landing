@@ -1,10 +1,12 @@
+import { useState } from 'react'
+
 import { v4 as uuidv4 } from 'uuid';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import MainLayout from './MainLayout'
-import HeroImage from '../assets/HeroImage.jpeg';
+import MainLayout from '../MainLayout'
+import HeroImage from '../../assets/HeroImage.jpeg';
 
 
 
@@ -24,7 +26,7 @@ function HeroSection() {
               <button className="flex text-white justify-center items-center w-full sm:w-max px-6 h-12 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
                       after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-blue-secondary hover:after:opacity-100 hover:after:scale-[2.5] hover:text-black-text bg-blue-primary">
                 <span className="relative z-10">
-                  Get Started
+                  Cotiza Ya
                 </span>
               </button>
             </div>
@@ -38,9 +40,9 @@ function HeroSection() {
   );
 }
 
-import ShieldIcon from '../assets/icons/shield-star.svg';
-import BuildingIcon from '../assets/icons/building.svg';
-import CargoTruckIcon from '../assets/icons/cargo-truck.svg';
+import ShieldIcon from '../../assets/icons/shield-star.svg';
+import BuildingIcon from '../../assets/icons/building.svg';
+import CargoTruckIcon from '../../assets/icons/cargo-truck.svg';
 
 function Values() {
 
@@ -63,7 +65,7 @@ function Values() {
   ]
 
   return (
-    <div className="lg:max-w-[1650px] w-full flex flex-col mx-auto">
+    <div className="lg:max-w-[1575px] w-full flex flex-col mx-auto">
       <div className="w-full draggable">
         <div className="container flex flex-col items-center gap-16 mx-auto my-8">
           <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -86,12 +88,12 @@ function Values() {
   )
 }
 
-import CategoryImage from '../assets/images/instalation-guy.png';
-import CategoryImage2 from '../assets/images/console-box.png';
-import CategoryImage3 from '../assets/images/elevator-inside.png';
-import CategoryImage4 from '../assets/images/elevator-roof.png';
-import CategoryImage5 from '../assets/images/desk-girl.png';
-import CategoryImage6 from '../assets/images/elevator-motor.png';
+import CategoryImage from '../../assets/images/instalation-guy.png';
+import CategoryImage2 from '../../assets/images/console-box.png';
+import CategoryImage3 from '../../assets/images/elevator-inside.png';
+import CategoryImage4 from '../../assets/images/elevator-roof.png';
+import CategoryImage5 from '../../assets/images/desk-girl.png';
+import CategoryImage6 from '../../assets/images/elevator-motor.png';
 
 
 const images = [
@@ -128,41 +130,77 @@ const images = [
 ];
 
 const Categories = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      }
+    ]
+  };
+
   return (
-    <div className="bg-blue-primary mx-auto p-4 py-20 flex flex-col items-center justify-center">
-      <div className='lg:max-w-[1750px] mx-auto'>
+    <div className="bg-blue-primary mx-auto p-4 py-20 flex flex-col items-center justify-center w-full">
+      <div className='lg:max-w-[1575px] mx-auto w-full'>
         <div className="mx-auto max-w-xl text-center mb-12">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Productos y Servicios</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Encuentra el Servicio Perfecto para tus Necesidades</p>
         </div>
-        <div className="flex flex-wrap justify-center gap-4">
+        <Slider {...settings}>
           {images.map((image, index) => (
-            <div key={index} className="group w-full sm:w-1/2 lg:w-1/3 max-w-sm relative shadow-md rounded-lg cursor-pointer overflow-hidden">
+            <div key={index} className="group w-full max-w-xs relative shadow-md rounded-lg cursor-pointer overflow-hidden">
               <div className="aspect-w-16 aspect-h-9 transition-transform duration-300 group-hover:scale-105">
                 <img src={image.src} alt={image.alt} className="w-full h-full object-cover rounded-lg" />
               </div>
               <div className="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 group-hover:bg-opacity-70 flex items-center justify-center">
-                <span className="text-white text-lg font-bold opacity-0 group-hover:opacity-100">{"Ir a " + image.title}</span>
+                <span className="text-white text-lg font-bold opacity-0 group-hover:opacity-100">Conoce más</span>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-blue-secondary text-black-text backdrop-blur p-4 py-4 rounded-b-lg">
+              <div className="absolute bottom-0 left-0 right-0 bg-gray-100 transition-colors duration-300 group-hover:bg-blue-secondary text-black-text backdrop-blur p-4 py-4 rounded-b-lg">
                 <h1 className="text-2xl font-semibold">{image.title}</h1>
               </div>
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </div>
   );
-};
+}
 
 
-
-import LogoCompany1 from '../assets/companies/areandina.png'
-import LogoCompany2 from '../assets/companies/formacion-tecnica-y-humana.png'
-import LogoCompany3 from '../assets/companies/jorge-baron.png'
-import LogoCompany4 from '../assets/companies/koaj.png'
-import LogoCompany5 from '../assets/companies/laboratorios-quirigua.png'
-import LogoCompany6 from '../assets/companies/su-presencia.png'
+import LogoCompany1 from '../../assets/companies/areandina.png'
+import LogoCompany2 from '../../assets/companies/formacion-tecnica-y-humana.png'
+import LogoCompany3 from '../../assets/companies/jorge-baron.png'
+import LogoCompany4 from '../../assets/companies/koaj.png'
+import LogoCompany5 from '../../assets/companies/laboratorios-quirigua.png'
+import LogoCompany6 from '../../assets/companies/su-presencia.png'
 
 function CompanyLogos() {
   const logos = [
@@ -222,11 +260,11 @@ function CompanyLogos() {
   };
 
   return (
-    <div className="flex flex-col mx-3 my x-12 rounded-lg py-12">
-        <div className="mx-auto max-w-xl text-center mb-12">
-          <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-700">Nuestros Clientes</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-black-text sm:text-4xl">Ascensores de Confianza para Tu Hogar y Negocio</p>
-        </div>
+    <div className="mx-auto max-w-[1575px] flex flex-col rounded-lg py-12">
+      <div className="mx-auto max-w-xl text-center mb-12">
+        <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-700">Nuestros Clientes</h2>
+        <p className="mt-2 text-3xl font-bold tracking-tight text-black-text sm:text-4xl">Ascensores de Confianza para Tu Hogar y Negocio</p>
+      </div>
       <div className="w-full draggable">
         <div className="container flex flex-col items-center gap-8 mx-auto">
           <Slider {...settings} className="w-full">
@@ -340,7 +378,7 @@ function Projects() {
 
   return (
     <section className="text-gray-400 bg-blue-primary body-font">
-      <div className="container px-5 py-12 mx-auto">
+      <div className="max-w-[1575px] mx-auto px-5 py-12">
         <div className="mx-auto max-w-xl text-center mb-12">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Nuestros Proyectos</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Casos de Éxito en Modernización de Ascensores</p>
@@ -385,6 +423,71 @@ function Projects() {
   );
 }
 
+const tabData = [
+  {
+    title: 'Performance Reports',
+    description: 'See over 3X more data with Map Labs than Google Business Profiles natively. Customize date ranges to view performance metrics by day, week, or month. Discover the truth about your Google Business Profile with Map Labs Performance Reports. Analyze KPIs like Direction Requests, Phone Calls, and Website Visits to see when you have the highest and lowest performance on Google Maps.',
+    cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
+    image: 'https://via.placeholder.com/560x315',
+  },
+  {
+    title: 'Keyword Tracking',
+    description: 'Discover exactly what keywords your business is being found for on Page 1 of Google Maps and Search. Keyword Tracking allows you to understand how your customers are searching for your business so you can create engaging posts, promotions, and assets that match their intent and engage them to choose your business over the competition. Understand which keywords have the most impact on your business by comparing changes in impressions month-over-month or year-over-year.',
+    cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
+    image: 'https://via.placeholder.com/560x315',
+  },
+  {
+    title: 'Performance Reports',
+    description: 'See over 3X more data with Map Labs than Google Business Profiles natively. Customize date ranges to view performance metrics by day, week, or month. Discover the truth about your Google Business Profile with Map Labs Performance Reports. Analyze KPIs like Direction Requests, Phone Calls, and Website Visits to see when you have the highest and lowest performance on Google Maps.',
+    cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
+    image: 'https://via.placeholder.com/560x315',
+  },
+  {
+    title: 'Keyword Tracking',
+    description: 'Discover exactly what keywords your business is being found for on Page 1 of Google Maps and Search. Keyword Tracking allows you to understand how your customers are searching for your business so you can create engaging posts, promotions, and assets that match their intent and engage them to choose your business over the competition. Understand which keywords have the most impact on your business by comparing changes in impressions month-over-month or year-over-year.',
+    cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
+    image: 'https://via.placeholder.com/560x315',
+  },
+];
+
+function Tabs() {
+  const [activeTab, setActiveTab] = useState(0);
+
+  return (
+    <section className="bg-blue-primary pb-6">
+      <div className="mx-auto max-w-xl text-center mb-12">
+        <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Productos y Servicios</h2>
+        <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Conoce nuestras soluciones</p>
+      </div>
+      <div className="lg:max-w-[1575px] mx-auto px-4">
+        <div className="flex overflow-auto pb-4">
+          {tabData.map((tab, index) => (
+            <div
+              key={index}
+              className={`tab-column__item cursor-pointer mx-1 p-4 rounded-lg ${activeTab === index ? 'bg-blue-secondary text-black' : 'bg-gray-200 text-black'}`}
+              onClick={() => setActiveTab(index)}
+            >
+              <h6 className="tab-column__item--title font-bold mb-0">{tab.title}</h6>
+            </div>
+          ))}
+        </div>
+        <div className="tab-content p-8 flex flex-wrap bg-white rounded-xl shadow-lg">
+          <div className="w-full lg:w-1/2">
+            <h5 className="text-blue-primary font-bold text-xl">{tabData[activeTab].title}</h5>
+            <p className="font-light mt-2 mr-8">{tabData[activeTab].description}</p>
+            <div className="flex space-x-4 mt-6">
+              <a href={tabData[activeTab].cta1.link} className="btn btn--sm btn--filled bg-blue-primary text-white px-4 py-2 rounded-lg" target="_blank" rel="noopener noreferrer">{tabData[activeTab].cta1.text}</a>
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2 mt-4 lg:mt-0 flex justify-center items-center">
+            <img src={tabData[activeTab].image} alt={tabData[activeTab].title} className="w-full h-auto rounded-xl"/>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 
 function Landing() {
@@ -395,6 +498,7 @@ function Landing() {
       <HeroSection />
       <Values />
       <Categories />
+      <Tabs />
       <CompanyLogos />
       <CustomerOpinions />
       <Projects />

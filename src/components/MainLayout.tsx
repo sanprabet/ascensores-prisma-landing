@@ -46,7 +46,7 @@ const socialMedia = [
   }
 ]
 
-const normalLinks = "text-[1.4rem] md:text-[1rem] xl:text-[1.2rem] leading-tight roboto-regular text-center mb-[0.5rem] border-b-4 border-transparent hover:border-red-primary py-2 mb-4 mt-2 md:my-0"
+const normalLinks = "text-[1.4rem] md:text-[1rem] xl:text-[1.2rem] leading-tight roboto-regular text-center border-b-4 border-transparent hover:border-red-primary py-2 mt-2"
 
 const categories = [
   {
@@ -63,11 +63,6 @@ const categories = [
     name: 'Nuestros Proyectos',
     link: '/contacto',
     className: normalLinks
-  },
-  {
-    name: 'Cotiza Ya',
-    link: '/aliados',
-    className: 'bg-blue-primary text-[1.4rem] md:text-[1rem] xl:text-[1.2rem] leading-tight roboto-regular text-center text-white-background rounded-full min-w-max px-8 py-2 mb-4 mt-2 md:my-0 md:mb-[0.5rem]'
   }
 ]
 
@@ -110,6 +105,12 @@ function NavBar() {
                 </li>
               ))
             }
+            <button className="text-white flex items-center justify-center mr-5 w-full sm:w-max px-6 py-2 my-auto rounded-full outline-none relative overflow-hidden border duration-300 ease-linear text-[1.4rem] md:text-[1rem] xl:text-[1.2rem] leading-tight roboto-regular text-center 
+              after:absolute after:inset-x-0 after:aspect-square after:scale-0 after:opacity-70 after:origin-center after:duration-300 after:ease-linear after:rounded-full after:top-0 after:left-0 after:bg-blue-secondary hover:after:opacity-100 hover:after:scale-[2.5] hover:text-black-text bg-blue-primary">
+              <span className="relative z-10">
+                Cotiza Ya
+              </span>
+            </button>
           </ul>
           <div className='flex items-center md:hidden'>
             <button onClick={() => {setMobileMenuOpened(!mobileMenuOpened)}}>
