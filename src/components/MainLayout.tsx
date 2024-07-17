@@ -46,7 +46,7 @@ const socialMedia = [
   }
 ]
 
-const normalLinks = "text-[1.4rem] md:text-[1rem] xl:text-[1.2rem] leading-tight roboto-regular text-center border-b-4 border-transparent hover:border-red-primary py-2 mt-2"
+const normalLinks = "text-[1.4rem] md:text-[1rem] xl:text-[1.1rem] leading-tight roboto-regular text-center border-b-4 border-transparent hover:border-red-primary py-2 mt-2"
 
 const categories = [
   {
