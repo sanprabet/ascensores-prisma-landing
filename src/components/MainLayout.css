@@ -1,0 +1,3 @@
+.slick-prev:before, .slick-next:before {
+  color: #303091; /* Custom color for the arrows */
+}

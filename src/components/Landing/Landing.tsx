@@ -136,6 +136,7 @@ const Categories = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    className: "mx-auto",
     responsive: [
       {
         breakpoint: 1024,
@@ -156,7 +157,7 @@ const Categories = () => {
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 420,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -168,7 +169,7 @@ const Categories = () => {
   };
 
   return (
-    <div className="bg-blue-primary mx-auto p-4 py-20 flex flex-col items-center justify-center w-full">
+    <div className="bg-blue-primary mx-auto px-7 py-20 flex flex-col items-center justify-center w-full">
       <div className='lg:max-w-[1575px] mx-auto w-full'>
         <div className="mx-auto max-w-xl text-center mb-12">
           <h2 className="text-lg font-semibold leading-8 tracking-tight text-stone-300">Productos y Servicios</h2>
@@ -183,7 +184,7 @@ const Categories = () => {
               <div className="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 group-hover:bg-opacity-70 flex items-center justify-center">
                 <span className="text-white text-lg font-bold opacity-0 group-hover:opacity-100">Conoce más</span>
               </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-gray-100 transition-colors duration-300 group-hover:bg-blue-secondary text-black-text backdrop-blur p-4 py-4 rounded-b-lg">
+              <div className="absolute bottom-0 left-0 right-0 bg-white transition-colors duration-300 group-hover:bg-blue-secondary hover:bg-white-background text-black-text backdrop-blur p-4 py-4 rounded-b-lg">
                 <h1 className="text-2xl font-semibold">{image.title}</h1>
               </div>
             </div>
@@ -358,22 +359,32 @@ const CustomerOpinions = () => {
   );
 };
 
+import Project1 from "../../assets/images/project-1.png";
+import Project2 from "../../assets/images/project-2.png";
+import Project3 from "../../assets/images/project-3.png";
+
 
 function Projects() {
 
   const projects = [
     {
-      image: "https://dummyimage.com/1205x505",
+      image: Project1,
       title: "The 400 Blows",
       description: "Swag shoindegoitch literally meditation subway tile tumblr cold-pressed. Gastropub street art beard dreamcatcher neutra, ethical XOXO lumbersexual.",
       link: "#"
     },
     {
-      image: "https://dummyimage.com/1205x505",
+      image: Project2,
       title: "Another Project",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.",
       link: "#"
-    }
+    },
+    {
+      image: Project3,
+      title: "Another Project",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor.",
+      link: "#"
+    },
   ]
 
   return (
@@ -423,30 +434,28 @@ function Projects() {
   );
 }
 
+import TechnicalPeople from '../../assets/images/technical-team.png';
+import ElevatorComponents from '../../assets/images/elevator-components.png';
+import ModernElevator from '../../assets/images/modern-elevator.png';
+
 const tabData = [
   {
-    title: 'Performance Reports',
+    title: 'Instalación y Mantenimiento',
     description: 'See over 3X more data with Map Labs than Google Business Profiles natively. Customize date ranges to view performance metrics by day, week, or month. Discover the truth about your Google Business Profile with Map Labs Performance Reports. Analyze KPIs like Direction Requests, Phone Calls, and Website Visits to see when you have the highest and lowest performance on Google Maps.',
     cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
-    image: 'https://via.placeholder.com/560x315',
+    image: TechnicalPeople,
   },
   {
-    title: 'Keyword Tracking',
+    title: 'Repuestos y Reparaciones',
     description: 'Discover exactly what keywords your business is being found for on Page 1 of Google Maps and Search. Keyword Tracking allows you to understand how your customers are searching for your business so you can create engaging posts, promotions, and assets that match their intent and engage them to choose your business over the competition. Understand which keywords have the most impact on your business by comparing changes in impressions month-over-month or year-over-year.',
     cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
-    image: 'https://via.placeholder.com/560x315',
+    image: ElevatorComponents,
   },
   {
-    title: 'Performance Reports',
+    title: 'Modernización de Ascensores',
     description: 'See over 3X more data with Map Labs than Google Business Profiles natively. Customize date ranges to view performance metrics by day, week, or month. Discover the truth about your Google Business Profile with Map Labs Performance Reports. Analyze KPIs like Direction Requests, Phone Calls, and Website Visits to see when you have the highest and lowest performance on Google Maps.',
     cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
-    image: 'https://via.placeholder.com/560x315',
-  },
-  {
-    title: 'Keyword Tracking',
-    description: 'Discover exactly what keywords your business is being found for on Page 1 of Google Maps and Search. Keyword Tracking allows you to understand how your customers are searching for your business so you can create engaging posts, promotions, and assets that match their intent and engage them to choose your business over the competition. Understand which keywords have the most impact on your business by comparing changes in impressions month-over-month or year-over-year.',
-    cta1: { text: 'Start FREE TRIAL!', link: '#calendly-signup' },
-    image: 'https://via.placeholder.com/560x315',
+    image: ModernElevator,
   },
 ];
 
@@ -464,7 +473,7 @@ function Tabs() {
           {tabData.map((tab, index) => (
             <div
               key={index}
-              className={`tab-column__item cursor-pointer mx-1 p-4 rounded-lg ${activeTab === index ? 'bg-blue-secondary text-black' : 'bg-gray-200 text-black'}`}
+              className={`tab-column__item cursor-pointer mx-1 p-4 rounded-lg ${activeTab === index ? 'bg-blue-secondary text-black' : 'bg-white text-black'}`}
               onClick={() => setActiveTab(index)}
             >
               <h6 className="tab-column__item--title font-bold mb-0">{tab.title}</h6>
@@ -473,7 +482,7 @@ function Tabs() {
         </div>
         <div className="tab-content p-8 flex flex-wrap bg-white rounded-xl shadow-lg">
           <div className="w-full lg:w-1/2">
-            <h5 className="text-blue-primary font-bold text-xl">{tabData[activeTab].title}</h5>
+            <h5 className="text-blue-primary font-black text-[1.6rem]">{tabData[activeTab].title}</h5>
             <p className="font-light mt-2 mr-8">{tabData[activeTab].description}</p>
             <div className="flex space-x-4 mt-6">
               <a href={tabData[activeTab].cta1.link} className="btn btn--sm btn--filled bg-blue-primary text-white px-4 py-2 rounded-lg" target="_blank" rel="noopener noreferrer">{tabData[activeTab].cta1.text}</a>

@@ -1,4 +1,11 @@
 import React from 'react'
+
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
+
+import './MainLayout.css'
+
 import { v4 as uuidv4 } from 'uuid';
 
 import CompanyLogo from '../assets/isologotipo.png';
@@ -46,7 +53,7 @@ const socialMedia = [
   }
 ]
 
-const normalLinks = "text-[1.4rem] md:text-[1rem] xl:text-[1.1rem] leading-tight roboto-regular text-center border-b-4 border-transparent hover:border-red-primary py-2 mt-2"
+const normalLinks = "text-[1.2rem] md:text-[1rem] xl:text-[1.1rem] leading-tight roboto-regular text-center border-b-4 border-transparent hover:border-red-primary py-2 "
 
 const categories = [
   {
@@ -76,8 +83,8 @@ function NavBar() {
       <div className='w-full border-b-2 px-4'>
         <div className='justify-between hidden md:flex px-4'>
           <div className='flex py-1'>
-            <span className='text-[1.4rem] md:text-[1rem] roboto-light leading-tight text-black-texts pr-5'>(+57) 318 323 9426</span>
-            <span className='text-[1.4rem] md:text-[1rem] roboto-light leading-tight text-black-text'>webmasterprisma1@gmail.com</span>
+            <span className='text-[1.2rem] md:text-[1rem] roboto-light leading-tight text-black-texts pr-5'>(+57) 318 323 9426</span>
+            <span className='text-[1.2rem] md:text-[1rem] roboto-light leading-tight text-black-text'>webmasterprisma1@gmail.com</span>
           </div>
           <div className='flex justify-between'>
             {
@@ -129,6 +136,10 @@ function NavBar() {
           ))
         }
         </div>
+        <div className='flex flex-col justify-center items-center mt-2'>
+          <span className='small-text roboto-regular md:leading-[2.5rem] text-black-texts md:pr-5'>(+57) 318 323 9426</span>
+          <span className='small-text roboto-regular md:leading-[2.4rem] text-black-text'>webmasterprisma1@gmail.com</span>
+        </div>
         <div className='flex justify-center'>
           {
             socialMedia.map((social) => (
@@ -142,14 +153,127 @@ function NavBar() {
             ))
           }
         </div>
-        <div className='flex flex-col justify-center items-center'>
-          <span className='small-text roboto-regular md:leading-[2.5rem] text-black-texts md:pr-5'>(+57) 318 323 9426</span>
-          <span className='small-text roboto-regular md:leading-[2.4rem] text-black-text'>webmasterprisma1@gmail.com</span>
-        </div>
       </div>
     </div>
   )
 }
+
+const newsItems = [
+  {
+    imgSrc: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51701996/original/ac2eabbe-da86-4646-a7d7-f6fe48c083b8.jpeg?im_w=720",
+    category: "MUNDO",
+    time: "Hace pocos segundos",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.",
+  },
+  {
+    imgSrc: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51701996/original/ac2eabbe-da86-4646-a7d7-f6fe48c083b8.jpeg?im_w=720",
+    category: "MUNDO",
+    time: "Hace pocos segundos",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.",
+  },
+  {
+    imgSrc: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51701996/original/ac2eabbe-da86-4646-a7d7-f6fe48c083b8.jpeg?im_w=720",
+    category: "MUNDO",
+    time: "Hace pocos segundos",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.",
+  },
+  {
+    imgSrc: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-51701996/original/ac2eabbe-da86-4646-a7d7-f6fe48c083b8.jpeg?im_w=720",
+    category: "MUNDO",
+    time: "Hace pocos segundos",
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum.",
+  },
+];
+
+const NewsSection = () => {
+
+  interface ArrowProps {
+    className?: string;
+    style?: React.CSSProperties;
+    onClick?: () => void;
+  }
+  
+  const SampleNextArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', color: '#dedcf5' }}
+      onClick={onClick}
+    />
+  );
+  
+  const SamplePrevArrow: React.FC<ArrowProps> = ({ className, style, onClick }) => (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', color: '#dedcf5' }}
+      onClick={onClick}
+    />
+  );
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 768, // md breakpoint
+        settings: {
+          slidesToShow: 1.1,
+          centerMode: true,
+        },
+      },
+    ],
+  };
+
+  return (
+    <div className="w-full max-w-4xl mx-auto">
+      <Slider {...settings}>
+        {newsItems.map((item, index) => (
+          <div key={index} className="px-2"> {/* Added padding to create gap */}
+            <div className="block rounded-lg bg-blue-secondary shadow-md">
+              <div className="relative overflow-hidden bg-cover bg-no-repeat rounded-lg">
+                <img
+                  className="rounded-lg w-full h-64 object-cover"
+                  src={item.imgSrc}
+                  alt={item.category}
+                />
+                <a href="#!">
+                  <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[rgba(0,0,0,0.3)] opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
+                </a>
+              </div>
+
+              <div className="p-4">
+                <div className="flex justify-start items-center mb-2">
+                  <span className="text-red-600 font-bold text-sm">{item.category}</span>
+                  <span className="ml-2 text-gray-500 text-sm">{item.time}</span>
+                </div>
+                <h5 className="text-lg font-bold text-gray-800">{item.title}</h5>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
+      <style>{`
+        .slick-slide {
+          padding: 0 0.2px; /* Add padding to each slide */
+        }
+
+        .slick-list {
+          margin: 0 -0.2px; /* Adjust the negative margin */
+        }
+
+        @media (max-width: 768px) {
+          .slick-prev, .slick-next {
+            display: none !important;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
 
 function Footer() {
 
@@ -162,22 +286,23 @@ function Footer() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9184702090756!2d-74.10091898891754!3d4.608615595346722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a02e020d4d%3A0x46772c4e86871dd3!2sAscensores%20Prisma!5e0!3m2!1sfr!2sco!4v1720662458445!5m2!1sfr!2sco"
               width="100%"
-              height="300"
+              height="450"
               style={{ border: 0 }}
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <div className='w-full md:w-1/2 p-2 flex flex-col justify-center'>
-            <h3 className='roboto-bold small-text text-black-texts mb-1'>Nuestros Servicios</h3>
-            <div className='bg-yellow-100 flex justify-center items-center w-full h-[14rem] mb-2'>
-              <h3>Espacio Publicitario</h3>
-            </div>
-
-            <div className='flex flex-col items-center'>
-              <span className='extra-small-text roboto-bold text-black-texts'>(+57) 318 323 9426</span>
-              <span className='extra-small-text roboto-bold text-black-text'>serviciosascprisma@gmail.com</span>
+          <div className='w-full md:w-1/2 p-2 flex flex-col'>
+            <h3 className='roboto-bold small-text text-black-texts mb-1 md:px-8'>Conoce más</h3>
+            <NewsSection />
+          </div>
+        </div>
+        <div className='text-center mt-5'>
+            <div className='flex flex-col items-center mt-2'>
+              <span className='extra-small-text roboto-regular text-black-text'>(+57) 318 323 9426</span>
+              <span className='extra-small-text roboto-regular text-black-text'>serviciosascprisma@gmail.com</span>
+              <span className='extra-small-text roboto-regular text-black-text'>&copy; {new Date().getFullYear()} Ascensores Prisma. Todos los derechos reservados.</span>
             </div>
             <div className='flex justify-center'>
               {
@@ -192,10 +317,6 @@ function Footer() {
                 ))
               }
             </div>
-          </div>
-        </div>
-        <div className='text-center mt-2'>
-          <span className='small-text roboto-regular text-black-text'>&copy; {new Date().getFullYear()} Ascensores Prisma. Todos los derechos reservados.</span>
         </div>
       </div>
     </footer>
