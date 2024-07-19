@@ -247,7 +247,7 @@ const NewsSection = () => {
 
               <div className="p-4">
                 <div className="flex justify-start items-center mb-2">
-                  <span className="text-red-600 font-bold text-sm">{item.category}</span>
+                  <span className="text-blue-primary font-bold text-sm">{item.category}</span>
                   <span className="ml-2 text-gray-500 text-sm">{item.time}</span>
                 </div>
                 <h5 className="text-lg font-bold text-gray-800">{item.title}</h5>
@@ -286,7 +286,7 @@ function Footer() {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9184702090756!2d-74.10091898891754!3d4.608615595346722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99a02e020d4d%3A0x46772c4e86871dd3!2sAscensores%20Prisma!5e0!3m2!1sfr!2sco!4v1720662458445!5m2!1sfr!2sco"
               width="100%"
-              height="450"
+              height="370"
               style={{ border: 0 }}
               allowFullScreen={false}
               loading="lazy"
@@ -294,7 +294,7 @@ function Footer() {
             ></iframe>
           </div>
           <div className='w-full md:w-1/2 p-2 flex flex-col'>
-            <h3 className='roboto-bold small-text text-black-texts mb-1 md:px-8'>Conoce más</h3>
+            <h3 className='roboto-bold small-text text-black-texts mb-1 px-2'>Conoce más</h3>
             <NewsSection />
           </div>
         </div>
